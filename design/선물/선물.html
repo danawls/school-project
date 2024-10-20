@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선물 추천 페이지</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nanum Gothic', sans-serif;
+            background-color: #000;
+            color: #ff0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('https://example.com/spooky-background.jpg'); /* Replace with actual background */
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff0000;
+            text-shadow: 0px 0px 10px #ff0000;
+            animation: flicker 2s infinite;
+        }
+
+        .piggy-bank {
+            font-size: 6rem;
+            color: #ff5722;
+            margin-bottom: 1rem;
+        }
+
+        .paper {
+            margin: 1.5rem 0;
+            background-color: #fff;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            animation: slide-up 2s ease-in-out;
+            display: none;
+        }
+
+        .button {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background-color: #800000;
+            color: white;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #ff0000;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .button-container {
+            margin-top: 1.5rem;
+        }
+
+        /* Curtain button styling */
+        .curtain-button {
+            background-image: linear-gradient(to bottom, #8b0000, #ff0000);
+            color: white;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .curtain-button:hover {
+            background-color: #ff0000;
+            transform: scale(1.05);
+        }
+
+        /* Slide-up animation for the paper */
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Flickering effect */
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .button {
+                font-size: 0.9rem;
+            }
+
+            .paper {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>선물 추천</h1>
+
+    <!-- Piggy bank icon -->
+    <div class="piggy-bank">🐷</div>
+
+    <!-- Paper with the gift name (hidden initially) -->
+    <div class="paper" id="gift-paper">🎁 선물 이름</div>
+
+    <!-- Curtain-styled button to draw a gift -->
+    <button class="curtain-button" onclick="drawGift()">추첨하기</button>
+
+    <div class="button-container">
+        <button class="button">게임 재시작하기</button>
+        <button class="button">다음 단계</button>
+    </div>
+</div>
+
+<script>
+    // Simulating gift draw
+    function drawGift() {
+        const giftPaper = document.getElementById("gift-paper");
+        giftPaper.textContent = "🎁 멋진 선물"; // Replace with actual gift name logic
+        giftPaper.style.display = "block"; // Reveal the paper
+    }
+</script>
+
+</body>
+</html>

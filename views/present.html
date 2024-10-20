@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선물 추천 페이지</title>
+    <script src="/scripts/add.js" defer></script>
+    <link rel="stylesheet" href="/css/present.css">
+    <script src="/scripts/public.js" defer></script>
+    <link rel="stylesheet" href="/css/public.css">
+    <script src="/scripts/present.js" defer></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>선물 추첨</h1>
+
+    <!-- Piggy bank icon -->
+    <div class="piggy-bank">🐷</div>
+
+    <!-- Paper with the gift name (hidden initially) -->
+    <div class="paper" id="gift-paper">🎁 선물 이름</div>
+
+    <!-- Curtain-styled button to draw a gift -->
+    <button class="curtain-button" onclick="drawGift()">추첨하기</button>
+
+    <div class="button-container">
+        <button class="button" id="re">게임 재시작하기</button>
+        <button class="button" id="next">다음 단계</button>
+    </div>
+</div>
+
+</body>
+</html>

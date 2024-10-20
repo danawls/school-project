@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제1 게임 - 송린중학교 1학년 13반 축제 부스</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nanum Gothic', sans-serif;
+            background-color: #000;
+            color: #ff0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            animation: flicker 2s infinite;
+        }
+        .timer {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            animation: pulse 1s infinite;
+        }
+        .button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            background-color: #300;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #ff0000;
+            color: #000;
+            transform: scale(1.05);
+        }
+        .settings-button {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            background: none;
+            border: none;
+            color: #ff0000;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 1000;
+        }
+        .button-container {
+            margin-top: 2rem;
+        }
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .timer {
+                font-size: 2.5rem;
+            }
+            .button {
+                font-size: 1rem;
+                padding: 0.8rem 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<button class="settings-button">⚙️</button>
+<div class="container">
+    <h1>제1 게임</h1>
+    <div class="timer">05:00</div>
+    <div>
+        <button class="button">게임 재시작하기</button>
+        <button class="button">다음 단계</button>
+    </div>
+    <div class="button-container">
+        <button class="button">게임 성공</button>
+    </div>
+</div>
+</body>
+</html>

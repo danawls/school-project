@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 error</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            background-image: url("https://i.namu.wiki/i/AecaZgCnSzq7oO54ksXi1iG0ZuLEPEkmc4RJi-hNYux7KX46Ux1JbeXetU0vNKj3C9cByI3OTEX2yD74Vo3K3Q.webp");
+        }
+
+        button{
+            width: 1000px;
+            height: 500px;
+            font-family: "Nanum Gothic";
+            font-size: 50pt;
+            background-color: rgba(255, 32, 45, 0.5);
+            border-radius: 5rem;
+            border-color: black;
+            border-style: solid;
+            color: lightgray;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgba(255, 32, 45, 0.8);
+        }
+
+        h1{
+            font-family: "Noto Sans NKo";
+            color: white;
+            font-size: 40pt;
+
+        }
+
+        #four0four{
+            font-family: Arial, sans-serif;
+            font-size: 75pt;
+        }
+
+        img {
+            z-index: -100;
+            position: absolute;
+            width: 500px; /* 이미지 크기 조정 */
+            height: auto;
+        }
+
+        .image1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: moveImage1 5s infinite alternate ease-in-out, rotateImage1 2s infinite linear;
+        }
+
+        /* 두 번째 이미지 스타일 */
+        .image2 {
+            width: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: moveImage2 6s infinite alternate ease-in-out, rotateImage2 3s infinite linear;
+        }
+
+        /* 첫 번째 이미지가 이리저리 이동하는 애니메이션 */
+        @keyframes moveImage1 {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: 0;
+                left: 80%;
+            }
+            50% {
+                top: 80%;
+                left: 80%;
+            }
+            75% {
+                top: 80%;
+                left: 0;
+            }
+            100% {
+                top: 50%;
+                left: 50%;
+            }
+        }
+
+        /* 첫 번째 이미지가 회전하는 애니메이션 */
+        @keyframes rotateImage1 {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* 두 번째 이미지가 다른 방식으로 움직이는 애니메이션 */
+        @keyframes moveImage2 {
+            0% {
+                top: 10%;
+                left: 90%;
+            }
+            25% {
+                top: 70%;
+                left: 10%;
+            }
+            50% {
+                top: 90%;
+                left: 70%;
+            }
+            75% {
+                top: 20%;
+                left: 40%;
+            }
+            100% {
+                top: 50%;
+                left: 50%;
+            }
+        }
+
+        /* 두 번째 이미지가 회전하는 애니메이션 */
+        @keyframes rotateImage2 {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(-360deg); /* 반대 방향으로 회전 */
+            }
+        }
+    </style>
+</head>
+<body>
+<h1 id="four0four">404 ERROR</h1>
+<button>페이지가 없습니다. 대신 노무현을 부르시겠습니까?</button>
+<h1 class="hidden">부엉이 바위서 떨어졌다</h1>
+<h1 class="hidden">야아~ 기분좋다!</h1>
+<h1 class="hidden">야~ 야~ 기분좋다!</h1>
+<h1 class="hidden">노무현 응딩이 정말 좋다!</h1>
+<h1 class="hidden">부엉이 바위서 떨어졌다</h1>
+<h1 class="hidden">야아~ 기분좋다!</h1>
+
+<img src="https://pngimg.com/uploads/koala/koala_PNG10.png" alt="Spinning Image" class="image1">
+<img src="https://png.pngtree.com/element_our/20240611/318156816ec769e760cd3255fd600e9d.png" alt="Spinning Image" class="image2">
+<audio id="myAudio" controls class="hidden">
+    <source src="https://www.dropbox.com/scl/fi/wif2h6qirl7pzl10sjfmm/sound.mp3?rlkey=o83x26m7v6c68a2ayh9y7dhk4&st=v16bh3fa&raw=1" type="audio/mpeg">
+</audio>
+
+<script>
+    const audio1 = document.getElementById("myAudio");
+    const btn = document.querySelector("button");
+
+    // 오디오가 완전히 로드되었을 때만 재생을 시작합니다.
+    audio1.addEventListener('canplaythrough', () => {
+        console.log("Audio is ready to play!");
+    });
+
+    const handleButton = () => {
+        const h1 = document.querySelectorAll("h1");
+        const noth = document.querySelector(("#four0four"));
+        h1.forEach((v) => {
+            v.classList.remove("hidden");
+        });
+        noth.classList.add("hidden");
+        audio1.volume = 0.2;
+        // 오디오를 무한 루프하게 설정합니다.
+        audio1.loop = true;
+
+        // 오디오가 완전히 로드되었을 때 재생을 시작합니다.
+        audio1.play().then(() => {
+            console.log("Audio is playing!");
+        }).catch(error => {
+            console.log("Error playing audio:", error);
+        });
+        btn.classList.add("hidden");
+    };
+
+    btn.addEventListener("click", handleButton);
+</script>
+</body>
+</html>

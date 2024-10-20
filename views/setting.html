@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설정 페이지</title>
+</head>
+<body>
+
+<!-- Settings button in the bottom left -->
+<button class="settings-button" onclick="openPopup()">⚙️</button>
+
+<div class="container">
+    <h1>비밀번호 맞추기</h1>
+    <p>게임을 진행하세요!</p>
+</div>
+
+<!-- Popup for settings -->
+<div class="popup-overlay" id="popup">
+    <div class="popup">
+        <h2>선물 목록</h2>
+
+        <div class="gift-list" id="gift-list">
+            <p>🎁 선물 1</p>
+            <p>🎁 선물 2</p>
+            <!-- Gifts will be listed here -->
+        </div>
+
+        <div class="input-form">
+            <input type="text" id="gift-input" placeholder="선물 이름을 입력하세요">
+            <button onclick="addGift()">선물 추가하기</button>
+        </div>
+
+        <button class="close-btn" onclick="closePopup()">닫기</button>
+    </div>
+</div>
+
+<script>
+    // Open the popup
+    function openPopup() {
+        document.getElementById("popup").classList.add("active");
+    }
+
+    // Close the popup
+    function closePopup() {
+        document.getElementById("popup").classList.remove("active");
+    }
+
+    // Add gift to the list
+    function addGift() {
+        const giftName = document.getElementById("gift-input").value;
+        if (giftName.trim()) {
+            const giftList = document.getElementById("gift-list");
+            const newGift = document.createElement("p");
+            newGift.innerText = `🎁 ${giftName}`;
+            giftList.appendChild(newGift);
+            document.getElementById("gift-input").value = '';  // Clear input
+        }
+    }
+</script>
+
+</body>
+</html>

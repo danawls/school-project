@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성공 / 실패 페이지</title>
+    <script src="/scripts/add.js" defer></script>
+    <link rel="stylesheet" href="/css/result.css">
+    <script src="/scripts/public.js" defer></script>
+    <link rel="stylesheet" href="/css/public.css">
+    <script src="/scripts/result.js" defer></script>
+
+</head>
+<body>
+
+<div class="container">
+    <!-- Success or Failure Message -->
+    <h1 class="success" id="result-message">맞추셨습니다!</h1> <!-- Change to "failure" class for 틀리셨습니다 -->
+
+    <p id="result-description">정답을 맞추셨습니다! 축하합니다!</p> <!-- Change message depending on the result -->
+
+    <div class="button-container">
+        <button class="button" id="re">게임 재시작하기</button>
+        <button class="button" id="next">다음 단계</button>
+    </div>
+</div>
+
+</body>
+</html>
