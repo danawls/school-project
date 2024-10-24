@@ -1,4 +1,4 @@
-thisTimer = [0, 3];
+thisTimer = [1, 30];
 
 let isSuccess = false;
 
@@ -39,7 +39,7 @@ function startTimer(minutes, seconds) {
         // 시간이 0이 되면 타이머 종료
         if (remainingTime <= 0) {
             clearInterval(intervalId);
-            successBtn.classList.remove('hidden');
+            successBtn.classList.add('hidden');
             console.log("Timer finished!");
         }
 

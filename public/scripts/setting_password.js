@@ -38,7 +38,7 @@ const handleDirectSetBtn = (e) => {
         password.pop();
     }
 
-    for (const val in protoPassword) {
+    for (const val of protoPassword) {
         password.push(val);
     }
 
